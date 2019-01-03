@@ -38,10 +38,22 @@ namespace Program.cs
             }
         }
 
-        //public static string IsPerfectSequence(int[] arr)
-        //{
-
-        //}
+        public static string IsPerfectSequence(int[] arr)
+        {
+            int sum = 0, prod = 1;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+                prod *= arr[i];
+            }
+            if (sum == prod)
+            {
+                return "Yes";
+            } else
+            {
+                return "No";
+            }
+        }
 
         //public static int[] SumOfRows(int[,] matrix)
         //{
@@ -66,6 +78,11 @@ namespace Program.cs
             Console.Write("Enter a year from 1 and up: ");
             int year = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(IsLeapYear(year));
+
+            // Challenge 3
+            int[] ch3Array = { 3, 6, 9 };
+            Console.WriteLine($"Is the array [{string.Join(", ", ch3Array)}] a perfect sequence?");
+            Console.WriteLine(IsPerfectSequence(ch3Array));
         }
     }
 }
