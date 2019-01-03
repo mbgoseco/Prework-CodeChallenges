@@ -16,7 +16,7 @@ on every year that is evenly divisible by 4
   except every year that is evenly divisible by 100
     unless the year is also evenly divisible by 400
 
-Successful Output: //img link here
+Successful Output: https://github.com/mbgoseco/Prework-CodeChallenges/blob/master/assets/ch2.PNG
 
 
 --------------------------------
