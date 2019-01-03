@@ -21,10 +21,22 @@ namespace Program.cs
             return result;
         }
 
-        //public static string IsLeapYear(int year)
-        //{
-
-        //}
+        public static string IsLeapYear(int year)
+        {
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0 && year % 400 != 0)
+                {
+                    return $"{year} is not a leap year.";
+                } else
+                {
+                    return $"{year} is a leap year.";
+                }
+            } else
+            {
+                return $"{year} is not a leap year.";
+            }
+        }
 
         //public static string IsPerfectSequence(int[] arr)
         //{
@@ -50,7 +62,10 @@ namespace Program.cs
             int input = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"The score for your selection is: {MaxResult(ch1Array, input)}");
 
-
+            // Challenge 2
+            Console.Write("Enter a year from 1 and up: ");
+            int year = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(IsLeapYear(year));
         }
     }
 }
