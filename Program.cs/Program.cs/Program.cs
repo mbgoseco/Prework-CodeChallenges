@@ -1,46 +1,56 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace Program.cs
 {
-    public class Program
+    class Program
     {
-        public int MaxResult(int e)
+        public static int MaxResult(int[] arr, int input)
         {
-
+            int result = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == input)
+                {
+                    result += input;
+                }
+            }
+            return result;
         }
 
-        public string IsLeapYear(int year)
+        //public static string IsLeapYear(int year)
+        //{
+
+        //}
+
+        //public static string IsPerfectSequence(int[] arr)
+        //{
+
+        //}
+
+        //public static int[] SumOfRows(int[,] matrix)
+        //{
+
+        //}
+
+        static void Main(string[] args)
         {
+            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
+            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app!
+
+            Random rnum = new Random();
+
+            // Challenge 1
+            int[] ch1Array = { rnum.Next(1, 10), rnum.Next(1, 10), rnum.Next(1, 10), rnum.Next(1, 10), rnum.Next(1, 10) };
+            Console.WriteLine(string.Join(", ", ch1Array));
+            Console.Write("Choose a number between 1 and 10: ");
+            int input = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"The score for your selection is: {MaxResult(ch1Array, input)}");
+
 
         }
-
-        public string IsPerfectSequence(int[] arr)
-        {
-
-        }
-
-        public int[] SumOfRows(int[,] matrix)
-        {
-
-        }
-
-        public static void Main(string[] args)
-        {
-            CreateWebHostBuilder(args).Build().Run();
-
-
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
     }
 }
