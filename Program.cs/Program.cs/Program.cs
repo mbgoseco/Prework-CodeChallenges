@@ -55,10 +55,21 @@ namespace Program.cs
             }
         }
 
-        //public static int[] SumOfRows(int[,] matrix)
-        //{
-
-        //}
+        public static int[] SumOfRows(int[,] matrix)
+        {
+            int[] result = new int[matrix.GetLength(0)];
+            int sum;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                sum = 0;
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    sum += matrix[i, j]; 
+                }
+                result[i] = sum;
+            }
+            return result;
+        }
 
         static void Main(string[] args)
         {
@@ -83,6 +94,24 @@ namespace Program.cs
             int[] ch3Array = { 3, 6, 9 };
             Console.WriteLine($"Is the array [{string.Join(", ", ch3Array)}] a perfect sequence?");
             Console.WriteLine(IsPerfectSequence(ch3Array));
+
+            // Challenge 4
+            Console.Write("Enter number of rows for the 2-d array: ");
+            int m = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter number of columns for the 2-d array: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] matrix = new int[m, n];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                Console.Write("[");
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = rnum.Next(-100, 100);
+                    Console.Write($" {matrix[i, j]} ");
+                }
+                Console.WriteLine("]");
+            }
+            Console.WriteLine($"The sum of rows for this matrix is: [{string.Join(", ", SumOfRows(matrix))}]");
         }
     }
 }
