@@ -40,4 +40,4 @@ The user should specify the length and the width of the array within the console
 
 The method should take in the multidimensional array and return the single dimensional array with the sums
 
-Successful Output: //img link here
+Successful Output: https://github.com/mbgoseco/Prework-CodeChallenges/blob/master/assets/ch4.PNG
